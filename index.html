@@ -6,10 +6,57 @@
     <title>Pig Dice</title>
     <link rel="stylesheet" href="/css/site.css">
 </head>
-<body class="block">
+<body>
 
-    
+    <h1>Let's Play Pig!</h1>
+    <div id="rules"> 
+        <h2>How To Play</h2> 
+        <ul>
+            <li>The goal is to be the first to score 100 points.</li>
+            <li>On your turn, roll the die. Your score accumulates with each die roll. You can </li>
+            <li>decide to hold your score and end your turn. But be careful! If you roll a 1 your turn is over</li>
+            <li>  and your score resets to 0. Good luck!</li>
+        </ul>
+    </div>
+
+    <img src="images/newPig.jpg" height="300px">
+
+    <div>
+        <div id="thePig">
+            <h3>The Pig says you rolled a...</h3>
+            <h3>5</h3>
+        </div>
+
+        <div id = "playerOne">
+            <h3>Player One</h3>
+            <label for="currScore">Current Score:</label>
+            <span id="currScore">EMPTY</span>
+            <br><br>
+        </div>
+
+        <div id="playerTwo">
+            <h3>Player Two</h3>
+            <label for="currScore">Current Score:</label>
+            <span id="currScore">EMPTY</span>
+            <br><br>
+        </div>
         
+        <div id="activePlayer">
+            <label for="activePlayer">Active Player is:</label>
+            <span id ="activePlayer">TEST</span>
+            <br><br>
+
+            <button id="holdScorebttn">Hold Current Score</button>
+            <span>OR</span>
+            <button id="rollBttn">Roll The Pig!</button>
+        </div>
+
+
+        <h2 id="winner">Winner is Player !</h2>
+        
+    </div>
+        
+    
 
     <script src="js/main.js"></script>
 </body>
