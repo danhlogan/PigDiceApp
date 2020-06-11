@@ -72,17 +72,19 @@ function hold() {
 }
 function endGame() {
     if (playerOne.score >= 100) {
-        document.getElementById("winner").innerHTML = "Player one won!<br>";
+        document.getElementById("winner").innerHTML = "Player One won!<br>";
         var playAgain = document.createElement("BUTTON");
         playAgain.setAttribute("onclick", "location.reload();");
         playAgain.innerHTML = "Play again?";
         document.getElementById("winner").append(playAgain);
+        confetti.start(1700);
     }
     if (playerTwo.score >= 100) {
-        document.getElementById("winner").innerHTML = "Player two won!<br>";
+        document.getElementById("winner").innerHTML = "Player Two won!<br>";
         var playAgain = document.createElement("BUTTON");
         playAgain.setAttribute("onclick", "location.reload();");
         playAgain.innerHTML = "Play again?";
         document.getElementById("winner").append(playAgain);
+        confetti.start(1700);
     }
 }
