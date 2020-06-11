@@ -29,7 +29,14 @@ function startGame()
 function rollDie()
 {
     let die = Math.floor(Math.random() * (7 - 1) + 1)
-    document.getElementById("dieResult").innerText = parseInt(die)
+    document.getElementById("dieResult").innerText = die
+
+    // Makes each roll new color to be sure the die
+    let r = (Math.random() * 255)
+    let b = (Math.random() * 255)
+    let g = (Math.random() * 255) 
+    let col = "rgb(" + r + "," + g + "," + b + ")";
+    document.getElementById("dieResult").style.color = col
 
 
     if(playerOne.activePlayer == true)
@@ -38,6 +45,7 @@ function rollDie()
         if(die == 1)
         {
             playerOne.score = 0
+            document.getElementById("activePlayerSpan").innerText = "Player Two"
             document.getElementById("currScore1").innerText = playerOne.score
             playerOne.activePlayer = false
             playerTwo.activePlayer = true
@@ -57,9 +65,11 @@ function rollDie()
         if(die == 1)
         {
             playerTwo.score = 0
+            document.getElementById("activePlayerSpan").innerText = "Player One"
             document.getElementById("currScore2").innerText = playerTwo.score
             playerOne.activePlayer = true
             playerTwo.activePlayer = false
+            die = 0
         }
 
         else
@@ -76,24 +86,41 @@ function hold()
 {
     if(playerOne.activePlayer == true)
     {
-        playerOne.activePlayer = false  
+        playerOne.activePlayer = false
+        playerTwo.activePlayer = true  
+        document.getElementById("dieResult").innerText = "Roll!"
+        document.getElementById("activePlayerSpan").innerText = "Player Two"
+
     }
 
-    if(playerTwo.activePlayer == true)
+    else if(playerTwo.activePlayer == true)
     {
         playerTwo.activePlayer = false  
+        playerOne.activePlayer = true
+        document.getElementById("dieResult").innerText = "Roll!"
+        document.getElementById("activePlayerSpan").innerText = "Player One"
     }
 }
 
 function endGame()
 {
-    if(playerOne.score >= 100)
+    if(playerOne.score >= 10)
     {
-        document.getElementById("winner").innerText = "Player one won!"
+        document.getElementById("winner").innerHTML = "Player one won!<br>"
+        let playAgain = document.createElement("BUTTON");
+        playAgain.setAttribute("onclick","location.reload();")
+        playAgain.innerHTML = "Play again?"
+        document.getElementById("winner").append(playAgain)
+
+
     }
 
-    if(playerTwo.score >= 100)
+    if(playerTwo.score >= 10)
     {
-        document.getElementById("winner").innerText = "Player two won!"
+        document.getElementById("winner").innerHTML = "Player two won!<br>"
+        let playAgain = document.createElement("BUTTON");
+        playAgain.setAttribute("onclick","location.reload();")
+        playAgain.innerHTML = "Play again?"
+        document.getElementById("winner").append(playAgain)
     }
 }
