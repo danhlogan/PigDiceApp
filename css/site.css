@@ -65,3 +65,16 @@ img
 {
     float: right;
 }
+
+h3#dieResult
+{
+    color: red;
+    
+}
+
+@keyframes fadein 
+{
+    from { opacity: 0}
+    to   { opacity: 1}
+  }
+
