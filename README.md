@@ -5,3 +5,7 @@ On your turn, roll the die. Your score accumulates with each die roll. You can
 decide to hold your score and end your turn. But be careful! If you roll a 1 your turn is over
 and your score resets to 0. Good luck!
 
+Play here: https://danhlogan.github.io/PigDiceApp/
+
+NOTE: Not optimized for mobile, desktop suggested
+
