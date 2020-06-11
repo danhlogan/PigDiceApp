@@ -19,9 +19,9 @@ function startGame() {
 function rollDie() {
     var die = Math.floor(Math.random() * (7 - 1) + 1);
     document.getElementById("dieResult").innerText = die;
-    var r = (Math.random() * 255);
-    var b = (Math.random() * 255);
-    var g = (Math.random() * 255);
+    var r = (Math.random() * 255 - 100);
+    var b = (Math.random() * 255 - 100);
+    var g = (Math.random() * 255 - 100);
     var col = "rgb(" + r + "," + g + "," + b + ")";
     document.getElementById("dieResult").style.color = col;
     if (playerOne.activePlayer == true) {
@@ -71,14 +71,14 @@ function hold() {
     }
 }
 function endGame() {
-    if (playerOne.score >= 10) {
+    if (playerOne.score >= 100) {
         document.getElementById("winner").innerHTML = "Player one won!<br>";
         var playAgain = document.createElement("BUTTON");
         playAgain.setAttribute("onclick", "location.reload();");
         playAgain.innerHTML = "Play again?";
         document.getElementById("winner").append(playAgain);
     }
-    if (playerTwo.score >= 10) {
+    if (playerTwo.score >= 100) {
         document.getElementById("winner").innerHTML = "Player two won!<br>";
         var playAgain = document.createElement("BUTTON");
         playAgain.setAttribute("onclick", "location.reload();");
